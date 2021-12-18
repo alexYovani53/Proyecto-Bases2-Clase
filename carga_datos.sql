@@ -1,4 +1,5 @@
-delete from Temporal
+delete from Temporal;
+
 
 CREATE TABLE Temporal(
     banco varchar(100),
@@ -6,7 +7,7 @@ CREATE TABLE Temporal(
     pasivo int,
     capital int,
     mes int
-)
+);
 
 
 /*
@@ -20,7 +21,6 @@ CHARACTER SET latin1
 COLUMNS TERMINATED BY ';' 
 LINES TERMINATED BY '\n' 
 IGNORE 1 LINES (Banco,activo,pasivo,capital,mes);
-
 */
 
 -- Llenado de tablas
@@ -42,7 +42,7 @@ from
 temporal tmp ,
 Banco bc,
 Mes ms
-where tmp.banco = bc.nombre and tmp.mes = ms.mes
+where tmp.banco = bc.nombre and tmp.mes = ms.mes;
 
 
 -- llenando de pasivo
@@ -52,13 +52,13 @@ from
 temporal tmp ,
 Banco bc,
 Mes ms
-where tmp.banco = bc.nombre and tmp.mes = ms.mes
+where tmp.banco = bc.nombre and tmp.mes = ms.mes;
 
---lleando de capital
+-- lleando de capital
 INSERT INTO Banco_Rubro(cantidad,banco,rubro,mes)
 SELECT capital, bc.banco, 3 as rubro, ms.mes
 from 
 temporal tmp ,
 Banco bc,
 Mes ms
-where tmp.banco = bc.nombre and tmp.mes = ms.mes
+where tmp.banco = bc.nombre and tmp.mes = ms.mes;

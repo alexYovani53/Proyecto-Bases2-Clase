@@ -1,3 +1,7 @@
+create database proyecto_clase;
+
+use proyecto_clase;
+
 
 --- Tablas reales
 
@@ -46,7 +50,7 @@ INSERT INTO Mes(nombre) values('Noviembre');
 INSERT INTO Mes(nombre) values('Diciembre');
 
 
---INSERTAR RUBRO
-INSERT INTO Rubro(rubro,nombre) values(1,'Activo')
-INSERT INTO Rubro(rubro,nombre) values(2,'Pasivo')
-INSERT INTO Rubro(rubro,nombre) values(3,'Capital Contable')
+-- INSERTAR RUBRO
+INSERT INTO Rubro(rubro,nombre) values(1,'Activo');
+INSERT INTO Rubro(rubro,nombre) values(2,'Pasivo');
+INSERT INTO Rubro(rubro,nombre) values(3,'Capital Contable');
