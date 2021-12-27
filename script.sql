@@ -36,6 +36,8 @@ CREATE TABLE Banco_Rubro(
     CONSTRAINT fk_mes FOREIGN KEY(mes) REFERENCES Mes(mes) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
+INSERT INTO Mes(nombre) values('Noviembre');
+INSERT INTO Mes(nombre) values('Diciembre');
 INSERT INTO Mes(nombre) values('Enero');
 INSERT INTO Mes(nombre) values('Febrero');
 INSERT INTO Mes(nombre) values('Marzo');
@@ -46,8 +48,6 @@ INSERT INTO Mes(nombre) values('Julio');
 INSERT INTO Mes(nombre) values('Agosto');
 INSERT INTO Mes(nombre) values('Septiembre');
 INSERT INTO Mes(nombre) values('Octubre');
-INSERT INTO Mes(nombre) values('Noviembre');
-INSERT INTO Mes(nombre) values('Diciembre');
 
 
 -- INSERTAR RUBRO

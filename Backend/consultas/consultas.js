@@ -124,3 +124,26 @@ module.exports.crearVistas =  async()=>{
 
     return base.ejecutarQuery(query);
 }
+
+module.exports.crearTableUsuario = async()=>{
+    let query = `create table if not exists usuario (
+        id int primary key not null,
+        usuario varchar(30),
+        contrasena varchar(200));`;
+    return base.ejecutarQuery(query);
+}
+
+module.exports.insertarUsuario = async(id, usuario,contrasena)=>{
+    let query =  `insert into usuario(id,usuario,contrasena) values (${id},'${usuario}','${contrasena}');`;
+    return base.ejecutarQuery(query);
+}
+
+module.exports.contarUsuarios = async()=>{
+    let query = `select count(*) as numero from usuario;`;
+    return base.ejecutarQuery(query);
+}
+
+module.exports.buscarUsuario = async (parametros) =>{
+    let query = `select * from usuario where usuario = '${parametros.usuario}';`;
+    return base.ejecutarQuery(query);
+}

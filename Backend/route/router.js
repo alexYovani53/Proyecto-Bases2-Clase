@@ -57,7 +57,12 @@ router.get("/crearVistas",(request,response)=>{
     controlador.crearVistas(request,response);
 });
 
+router.get("/simularUsuarios",(request,response)=>{
+    controlador.crearUsuarios(request,response);
+}); 
 
-
+router.post("/login",(request,response)=>{
+    controlador.login(request,response);
+})
 
 module.exports = router;
