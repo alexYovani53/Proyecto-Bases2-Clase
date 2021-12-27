@@ -1,0 +1,10 @@
+POST http://localhost:3200/login
+Content-Type: application/json
+
+{
+    "usuario":"user1",
+    "contrasena":"bases2"
+}
+
+###
+GET http://localhost:3200/primerSemestre

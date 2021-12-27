@@ -6,6 +6,14 @@ router.get("/",(request,response)=>{
     controlador.inicio(request,response);
 });
 
+router.get("/primerSemestre",(request,response)=>{
+    controlador.primerSemestre(request,response);
+});
+
+router.get("/segundoSemestre",(request,response)=>{
+    controlador.segundoSemestre(request,response);
+});
+
 router.get("/noviembre",(request,response)=>{
     controlador.noviembre(request,response);
 });

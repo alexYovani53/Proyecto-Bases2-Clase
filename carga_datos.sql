@@ -15,7 +15,7 @@ mysql --local-infile=1 -u root -p
 SET GLOBAL local_infile=1;
 use proyecto_clase;
 
-LOAD DATA LOCAL INFILE 'C:\\control\\Datos.csv' 
+LOAD DATA INFILE 'Z:\Datos.csv' 
 INTO TABLE Temporal
 CHARACTER SET latin1
 COLUMNS TERMINATED BY ';' 
@@ -25,14 +25,13 @@ IGNORE 1 LINES (Banco,activo,pasivo,capital,mes);
 
 -- Llenado de tablas
 
+-- Llenado de la tabla usuarios
+INSERT INTO Usuario values(1, 'user1', 'pass123');
+INSERT INTO Usuario values(2, 'user2', 'pass456');
 
 -- Llenado de la tabla bancos
 INSERT INTO Banco(nombre)
 SELECT DISTINCT Banco from temporal;
-
-
-
-
 
 
 -- lleando tabla maestra, activo

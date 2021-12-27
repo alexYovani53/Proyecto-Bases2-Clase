@@ -125,7 +125,7 @@ SELECT *
 
 -- 5 primeros bancos en orden ascendente para el mes de noviembre de 2020
 SELECT *
-	FROM (SELECT banco, mes, anio, activo AS total
+	FROM (SELECT banco, mes, anio, activo*1000 AS total
 		FROM RatingPeriodo
 		WHERE mes = "NOVIEMBRE" AND anio = 2020
 		GROUP BY mes, anio, banco
@@ -135,7 +135,7 @@ SELECT *
 
 -- 5 ultimos bancos en orden descendente para el mes de febrero de 2021
 SELECT *
-	FROM (SELECT banco, mes, anio, activo AS total
+	FROM (SELECT banco, mes, anio, activo*1000 AS total
 		FROM RatingPeriodo
 		WHERE mes = "FEBRERO" AND anio = 2021
 		GROUP BY mes, anio, banco
@@ -145,7 +145,7 @@ SELECT *
 
 -- 3 primeros bancos en orden ascendente para el primer semestre 30/11/2020-30/04/2021
 SELECT 
-	* FROM (SELECT banco, sum(activo) as total
+	* FROM (SELECT banco, sum(activo)*1000 as total
 		FROM RatingPeriodo
 		WHERE periodo<7
 		GROUP BY banco
@@ -154,7 +154,7 @@ SELECT
 	ORDER BY total ASC;
 
 -- Mejor banco durante todo el año 30/11/2020 al 31/10/2021
-SELECT banco, sum(activo) as total
+SELECT banco, sum(activo)*1000 as total
 	FROM RatingPeriodo
 	WHERE periodo<=12
 	GROUP BY banco

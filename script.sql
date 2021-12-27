@@ -1,10 +1,16 @@
 create database proyecto_clase;
+drop database proyecto_clase;
 
 use proyecto_clase;
 
 
 --- Tablas reales
 
+create table if not exists usuario (
+	id int primary key not null,
+	usuario varchar(30),
+	contrasena varchar(200)
+);
 
 CREATE TABLE Banco(
     banco int not null AUTO_INCREMENT,
@@ -48,7 +54,7 @@ INSERT INTO Mes(nombre) values('Julio');
 INSERT INTO Mes(nombre) values('Agosto');
 INSERT INTO Mes(nombre) values('Septiembre');
 INSERT INTO Mes(nombre) values('Octubre');
-
+select * from Mes;
 
 -- INSERTAR RUBRO
 INSERT INTO Rubro(rubro,nombre) values(1,'Activo');

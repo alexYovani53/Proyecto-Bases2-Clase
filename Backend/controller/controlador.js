@@ -272,3 +272,32 @@ module.exports.login = async(request,response)=>{
         })
     }
 }
+
+
+module.exports.primerSemestre = async(request,response)=>{
+    try {
+        let resultado = await consultas.primerSemestre();
+        response.status(200).json({
+            resultado,
+            estado: "exitoso"
+        })
+    } catch (error) {
+        response.status(400).json({
+            estado: "erroneo"
+        })
+    }
+}
+
+module.exports.segundoSemestre = async(request,response)=>{
+    try {
+        let resultado = await consultas.segundoSemestre();
+        response.status(200).json({
+            resultado,
+            estado: "exitoso"
+        })
+    } catch (error) {
+        response.status(400).json({
+            estado: "erroneo"
+        })
+    }
+}

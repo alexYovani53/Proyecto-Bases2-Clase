@@ -147,3 +147,14 @@ module.exports.buscarUsuario = async (parametros) =>{
     let query = `select * from usuario where usuario = '${parametros.usuario}';`;
     return base.ejecutarQuery(query);
 }
+
+module.exports.primerSemestre = async (parametros) =>{
+    let query = `select * from rankingPrimerSemestre;`;
+    return base.ejecutarQuery(query);
+}
+
+
+module.exports.segundoSemestre = async (parametros) =>{
+    let query = `select * from rankingSegundoSemestre;`;
+    return base.ejecutarQuery(query);
+}
